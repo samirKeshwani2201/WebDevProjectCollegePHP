@@ -22,7 +22,7 @@ if ($result->num_rows != 0) {
     </script>
     <?php
 } else {
-
+    
     $sql = "select stu_id from student_login where email=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $_SESSION["email"]);
@@ -33,6 +33,7 @@ if ($result->num_rows != 0) {
         $stu_id = $row["stu_id"];
     }
     $_SESSION["stu_id"] = $stu_id;
+   
 }
 ?>
 

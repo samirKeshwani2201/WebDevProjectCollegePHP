@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-
-
-
-
+ 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cur_email = $_SESSION["email"];

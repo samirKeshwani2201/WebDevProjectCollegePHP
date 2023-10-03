@@ -29,7 +29,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background: #333333;
 }
 
@@ -52,7 +52,7 @@ body {
   position: absolute;
   height: 3px;
   width: 30px;
-  background: #6C757D;
+  background: #333333;
   left: 0;
   bottom: 0;
 }

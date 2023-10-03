@@ -11,9 +11,11 @@ session_start();
     <style>
         * {
             box-sizing: border-box;
+
         }
 
         body {
+
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -143,7 +145,7 @@ session_start();
         }
 
         .log {
-            border: 1px solid black;
+            border: 1px solid #333333;
             padding: 0 10px;
             /* margin-right: 10px; */
             width: 90%;
@@ -151,7 +153,7 @@ session_start();
             justify-content: center;
             align-items: center;
             font-size: 12px;
-            border-radius: 5px;
+            border-radius: 6px;
         }
 
         table {
@@ -191,7 +193,8 @@ session_start();
             <li><a href="editProfile.php">Edit Profile</a></li>
             <li>
                 <div class="log">
-                    <label>
+                    <label style="color: #333333;">
+                        Hello,
                         <?php echo $_SESSION["email"] ?>
                     </label>
                     <a href="./backend/logoutProcess.php">Logout</a>
@@ -200,50 +203,7 @@ session_start();
         </ul>
     </nav>
     <main class="container">
-        <!-- 
-        <div class="user_detail_container col">
-            <table border='1'>
-                <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Email Address</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Gender</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Mobile Number</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Qualification</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Date of Birth</th>
-                        <td>
-                            Dummy
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-         -->
+
         <div class="document_container col">
             <form class="upload_doc" action="backend/documnet_uploader.php" method="post" enctype="multipart/form-data">
                 <label> Select Your File :
@@ -259,15 +219,20 @@ session_start();
                         <th>Download</th>
                     </thead>
                     <tbody>
-                        <!-- <?php
+                        <?php
+
+                        // we have  the email in session  then from that get  the 
+                        require_once("./backend/dbconnect.php");
+                        $sq = "select * from doc_table where stu_id=" . $_SESSION["stu_id"];
+                        $document_details = $conn->query($sq);
                         while ($row = $document_details->fetch_assoc()) {
                             echo "<tr>"
-                                . "<td>" . $row['file_name'] . "</td>"
-                                . "<td>" . $row['created_at'] . "</td>"
-                                . "<td><a href='uploaded_documents/" . $row['file_name'] . "' download>Click Here</a></td>"
+                                . "<td>" . $row['doc_name'] . "</td>"
+                                . "<td>" . $row['time_upload'] . "</td>"
+                                . "<td><a style='color: #FF6000;' href='uploaded_documents/" . $row['doc_name'] . "' download>Click Here</a></td>"
                                 . "</tr>";
                         }
-                        ?> -->
+                        ?>
                     </tbody>
                 </table>
             </div>

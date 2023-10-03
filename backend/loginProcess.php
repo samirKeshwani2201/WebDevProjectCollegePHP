@@ -20,6 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($email == $row["email"] && $pass == $row["pass"]) {
                 $_SESSION["isLogin"] = 1;
                 $_SESSION["email"] = $email;
+
+                // setting the id so that will be usful in future i am from futuer (hehehe)
+
+                $sql = "select stu_id from student_login where email=?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $_SESSION["email"]);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                while ($row = $result->fetch_assoc()) {
+                    $stu_id = $row["stu_id"];
+                }
+                $_SESSION["stu_id"] = $stu_id;
+
                 header("location: ../index.php ");
                 // Successfully logged in
             } else {

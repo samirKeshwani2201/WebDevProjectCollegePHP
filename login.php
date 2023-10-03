@@ -1,5 +1,3 @@
- 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +10,7 @@
 
 <body>
     <div class="container">
-        <form class="login" action="backend/loginProcess.php" method="post">
+        <form class="login" action="./backend/loginProcess.php" method="post">
             <h2>User Login</h2>
             <div class="input-box">
                 <input type="email" name="email" placeholder="Email Address" id="username">
@@ -25,7 +23,7 @@
                     <input type="checkbox" name="" id="cb">
                     <label for="cb">Remember Me</label>
                 </div>
-               <a style="color:#000;cursor: pointer;" href="forgot_pass.php"><label for="">Forgot Password?</label></a>
+                <a style="color:#000;cursor: pointer;" href="forgot_pass.php"><label for="">Forgot Password?</label></a>
             </div>
 
             <div class="button">

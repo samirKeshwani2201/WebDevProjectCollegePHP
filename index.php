@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +30,7 @@
         h2,
         h3,
         a {
-            color: #333333 ;
+            color: #333333;
         }
 
         a {
@@ -55,7 +58,7 @@
         }
 
         .main-nav a {
-            color: #333333 ;
+            color: #333333;
             font-size: .99em;
         }
 
@@ -75,7 +78,7 @@
 
         main {
             width: 100%;
-            background-color: #333333 ;
+            background-color: #333333;
             padding: 20px;
             height: calc(100vh - 80px);
             display: flex;
@@ -115,14 +118,14 @@
         .custom-btn {
             padding: 10px;
             color: #fff;
-            background-color: #6C757D;
+            background-color: #333333;
             border: 1px solid black;
             border-radius: 5px;
             cursor: pointer;
         }
 
         .custom-btn:hover {
-            background-color: #00b28f;
+            background-color: #6C757D;
         }
 
         .custom-txt {
@@ -182,21 +185,21 @@
 
 <body>
     <nav class="navbar">
-        <h1 class="logo"><a href="#">INTRUDER</a></h1>
+        <h1 class="logo"><a href="#">Student Details</a></h1>
         <ul class="main-nav">
-            <li><a href="editProfile.php">Edit Profile</a></li>
             <li><a href="registration.php">Register</a></li>
+            <li><a href="editProfile.php">Edit Profile</a></li>
             <li>
                 <div class="log">
-                    <img src="uploaded_documents/profile_picture/ " alt="" height="50" width="50" srcset="">
-                    <label>"Samir K"</label>
-                    <a href="DBO/logout.php">Logout</a>
+                    <label>
+                        <?php echo $_SESSION["email"] ?>
+                    </label>
+                    <a href="./backend/logoutProcess.php">Logout</a>
                 </div>
             </li>
         </ul>
     </nav>
     <main class="container">
-
         <!-- 
         <div class="user_detail_container col">
             <table border='1'>

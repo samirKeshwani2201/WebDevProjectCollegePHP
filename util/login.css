@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #00ab9f;
+  --bg-color: #333333;
 }
 
 * {
@@ -23,7 +23,7 @@
   height: fit-content;
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  border-top: 5px solid #00ab9f;
+  border-top: 5px solid #333333;
   padding: 20px;
 }
 
@@ -66,7 +66,7 @@ input:not(input[type="checkbox"]) {
 .button > button {
   background: var(--bg-color);
   color: #fff;
-  border: #00ab9f;
+  border: #333333;
   border-radius: 5px;
   width: 100%;
   margin-top: 10px;

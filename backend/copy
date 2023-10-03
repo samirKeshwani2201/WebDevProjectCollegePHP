@@ -1,0 +1,37 @@
+<?php
+session_start();
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require_once("./dbconnect.php");
+
+    $cur_email = $_SESSION["email"];
+
+    $name = $_POST["f_name"];
+    $mobile = $_POST["mobile"];
+    $branch = $_POST["branch"];
+    $dob = $_POST["dob"];
+    $address = $_POST["address"];
+    $gender = $_POST["gender"];
+    $qualification = $_POST["qualification"];
+
+    $sql = "insert into registration (`stu_id`, `name`, `gender`, `phone`, `date_of_birth`, `address`, `qualification`) values(?,?,?,?,?,?,?)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("issssss", $_SESSION["stu_id"], $name, $gender, $mobile, $dob, $address, $qualification);
+    $chek = $stmt->execute();
+
+    if ($chek) {
+        ?>
+        <script>alert("User Registered sucessfully");
+            window.location.href = "../index.php";
+        </script>
+        <?php
+
+    }
+
+}
+
+
+
+?>

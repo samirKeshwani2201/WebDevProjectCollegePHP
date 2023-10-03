@@ -1,24 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.flx{
+
+.flx {
   display: flex;
 }
 
-.p-2{
+.p-2 {
   /* margin: 2px; */
   padding-left: 5px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.show{
+.show {
   display: block;
 }
 
@@ -28,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg,#71b7e6,#9b59b6);
+  background: #333333;
 }
 
 .container {
@@ -50,7 +52,7 @@ body {
   position: absolute;
   height: 3px;
   width: 30px;
-  background: #9b59b6;
+  background: #6C757D;
   left: 0;
   bottom: 0;
 }
@@ -72,7 +74,7 @@ form .user-details .input-box {
   margin-bottom: 50px;
 }
 
-.user-details .input-box input  {
+.user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -83,7 +85,7 @@ form .user-details .input-box {
 }
 
 .user-details .input-box input:focus {
-  border-color: #9b59b6;
+  border-color: #6C757D
 }
 
 form .gender-details .gender-title {
@@ -103,9 +105,10 @@ form .gender-details .category {
   align-items: center;
 }
 
-.gender-details .category label .gender{
+.gender-details .category label .gender {
   margin-left: 10px;
 }
+
 form .button {
   height: 45px;
   margin: 45px 0;
@@ -121,10 +124,10 @@ form .button input {
   font-weight: 500;
   border-radius: 5px;
   letter-spacing: 1px;
-  background: linear-gradient(135deg,#71b7e6,#9b59b6);
+  background: #333333;
 }
 
-form .button input:hover{
-    background: linear-gradient(-135deg,#71b7e6,#9b59b6);
-    cursor: pointer;
+form .button input:hover {
+  background: #6C757D;
+  cursor: pointer;
 }

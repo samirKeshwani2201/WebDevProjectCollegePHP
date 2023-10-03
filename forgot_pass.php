@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
+<head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Font Awesome Icons  -->
+ 
     <link rel="stylesheet" href="util/forgot_pass.css"/>
 
     <!-- Google Fonts  -->
